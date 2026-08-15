@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="MIND FORCE — Premium streetwear collection.">
+<title>MIND FORCE — Streetwear</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:#111;line-height:1.5}
+button{font-family:inherit}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+header{
+  position:sticky;top:0;z-index:1000;
+  background:#050505;color:#fff;
+  border-bottom:1px solid #222;
+}
+.navbar{
+  max-width:1200px;margin:auto;padding:18px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px
+}
+.logo{display:flex;align-items:center}.logo img{width:120px;height:auto;display:block}
+nav{display:flex;align-items:center;gap:22px}
+nav a{font-size:11px;font-weight:800;letter-spacing:1px}
+nav a:hover{opacity:.6}
+
+.cart-button{
+  position:relative;border:1px solid #555;background:#fff;color:#000;
+  padding:10px 15px;cursor:pointer;font-size:11px;font-weight:900;
+  letter-spacing:.7px
+}
+.cart-button:hover{background:#ddd}
+.cart-count{
+  position:absolute;top:-9px;right:-9px;
+  min-width:21px;height:21px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:#000;color:#fff;border:1px solid #fff;font-size:10px
+}
+
+/* HERO */
+.hero{
+  min-height:650px;background:#050505;color:#fff;
+  display:flex;align-items:center
+}
+.hero-inner{
+  width:min(1200px,100%);margin:auto;padding:80px 24px;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center
+}
+.kicker{font-size:11px;letter-spacing:4px;font-weight:800;margin-bottom:18px;color:#aaa}
+.hero h1{font-size:clamp(55px,9vw,110px);line-height:.86;letter-spacing:-5px}
+.hero p{max-width:580px;color:#bbb;margin:28px 0;font-size:15px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-block;border:1px solid #fff;padding:14px 20px;
+  font-size:11px;font-weight:900;letter-spacing:1px;cursor:pointer
+}
+.btn.primary{background:#fff;color:#000}
+.btn.secondary{background:transparent;color:#fff}
+.hero-card{
+  min-height:430px;border:1px solid #333;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:30px
+}
+.hero-card img{width:230px;max-width:80%;height:auto;display:block}
+
+/* SECTIONS */
+.section{max-width:1200px;margin:auto;padding:90px 24px}
+.section-head{
+  display:flex;justify-content:space-between;gap:30px;align-items:end;
+  margin-bottom:35px
+}
+.section-label{font-size:10px;letter-spacing:3px;color:#777;font-weight:900;margin-bottom:10px}
+.section h2{font-size:40px;letter-spacing:-2px}
+.section-head p{max-width:380px;color:#777;font-size:13px}
+
+/* PRODUCTS */
+.products{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:22px
+}
+.product{border:1px solid #e5e5e5;background:#fff}
+.product-media{position:relative;background:#f3f3f3;overflow:hidden}
+.product-media img{
+  display:block;width:100%;height:380px;object-fit:cover;
+  transition:transform .4s ease
+}
+.product:hover .product-media img{transform:scale(1.035)}
+.badge{
+  position:absolute;top:12px;left:12px;z-index:2;
+  background:#000;color:#fff;padding:6px 8px;font-size:9px;
+  letter-spacing:1px;font-weight:900
+}
+.info{padding:18px}
+.info h3{font-size:16px;letter-spacing:.5px;margin-bottom:7px}
+.info p{font-size:12px;color:#777;min-height:38px;margin-bottom:12px}
+.price{font-size:17px;font-weight:900;margin-bottom:12px}
+.sizes{display:flex;gap:5px;margin-bottom:14px;flex-wrap:wrap}
+.size{
+  min-width:32px;text-align:center;border:1px solid #ddd;
+  padding:5px 7px;font-size:10px;font-weight:800
+}
+.buy{
+  width:100%;border:1px solid #111;background:#111;color:#fff;
+  padding:12px 10px;cursor:pointer;font-size:10px;font-weight:900;
+  letter-spacing:.7px;margin-top:7px
+}
+.buy:hover{background:#333}
+
+/* BRAND */
+.brand-section{background:#f5f5f5}
+.brand-grid{
+  max-width:1200px;margin:auto;padding:90px 24px;
+  display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center
+}
+.brand-grid h2{font-size:55px;line-height:.95;letter-spacing:-3px}
+.brand-grid p{color:#666;font-size:14px;margin-top:20px;max-width:560px}
+.brand-box{background:#000;color:#fff;padding:55px;text-align:center}
+.brand-box strong{font-size:50px;letter-spacing:-3px}
+
+/* RESELLER */
+.reseller{border:1px solid #ddd;padding:35px;background:#fff}
+.reseller h3{font-size:25px;margin-bottom:10px}
+.reseller p{color:#666;font-size:13px;margin-bottom:20px}
+.reseller-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:25px}
+.reseller-list div{background:#f5f5f5;padding:15px;font-size:12px;font-weight:800}
+
+/* FOOTER */
+footer{background:#050505;color:#fff}
+.footer-inner{
+  max-width:1200px;margin:auto;padding:60px 24px;
+  display:grid;grid-template-columns:1fr 1fr;gap:40px
+}
+footer h2{font-size:30px;letter-spacing:2px}
+footer p{color:#999;font-size:13px;margin-top:10px}
+.footer-links{display:flex;justify-content:flex-end;gap:20px;align-items:center}
+.footer-links a{font-size:11px;font-weight:800}
+.copyright{border-top:1px solid #222;padding:18px 24px;text-align:center;color:#666;font-size:10px}
+
+/* CART */
+.cart-overlay{
+  display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1998
+}
+.cart-overlay.active{display:block}
+.cart-drawer{
+  position:fixed;top:0;right:-450px;width:min(430px,100%);
+  height:100vh;background:#fff;z-index:1999;
+  transition:right .3s ease;display:flex;flex-direction:column;
+  box-shadow:-15px 0 50px rgba(0,0,0,.2)
+}
+.cart-drawer.active{right:0}
+.cart-header{
+  padding:20px;border-bottom:1px solid #ddd;
+  display:flex;align-items:center;justify-content:space-between
+}
+.cart-header h2{font-size:20px}
+.cart-close{border:0;background:none;font-size:28px;cursor:pointer}
+.cart-content{flex:1;overflow:auto;padding:18px}
+.empty-cart{text-align:center;color:#777;padding:60px 10px;font-size:13px}
+.cart-item{
+  display:grid;grid-template-columns:68px 1fr auto;
+  gap:12px;padding:13px 0;border-bottom:1px solid #eee
+}
+.cart-item img{width:68px;height:78px;object-fit:cover;background:#eee}
+.cart-info h4{font-size:13px;margin-bottom:5px}
+.cart-info p{font-size:11px;color:#777;margin:2px 0}
+.cart-remove{border:0;background:none;color:#888;cursor:pointer;font-size:10px}
+.cart-footer{padding:18px;border-top:1px solid #ddd}
+.cart-total{display:flex;justify-content:space-between;font-size:17px;font-weight:900;margin-bottom:14px}
+.checkout-cart{
+  width:100%;border:0;background:#000;color:#fff;padding:15px;
+  cursor:pointer;font-size:11px;font-weight:900;letter-spacing:1px
+}
+.checkout-cart:hover{background:#333}
+
+/* CHECKOUT MODAL */
+.checkout-modal{
+  display:none;position:fixed;inset:0;z-index:3000;
+  background:rgba(0,0,0,.72);backdrop-filter:blur(6px);
+  align-items:center;justify-content:center;padding:18px
+}
+.checkout-modal.active{display:flex}
+.checkout-box{
+  width:min(570px,100%);max-height:94vh;overflow:auto;
+  background:#fff;padding:28px;position:relative
+}
+.checkout-close{
+  position:absolute;right:16px;top:12px;border:0;background:none;
+  font-size:27px;cursor:pointer
+}
+.checkout-box h3{font-size:27px}
+.checkout-sub{font-size:12px;color:#777;margin:5px 0 20px}
+.selected-product{
+  display:flex;gap:13px;align-items:center;padding:10px;background:#f5f5f5;margin-bottom:18px
+}
+.selected-product img{width:65px;height:70px;object-fit:cover}
+.selected-product strong{display:block;font-size:14px}
+.selected-product span{font-size:11px;color:#777}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.field{margin-bottom:5px}
+.field.full{grid-column:1/-1}
+.field label{display:block;font-size:10px;font-weight:900;margin-bottom:6px;letter-spacing:.5px}
+.field input,.field textarea,.field select{
+  width:100%;border:1px solid #ddd;padding:12px;font-size:12px;
+  outline:none;background:#fff
+}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:#111}
+.field textarea{min-height:75px;resize:vertical}
+.checkout-summary{border-top:1px solid #eee;margin-top:15px;padding-top:15px}
+.summary-row{display:flex;justify-content:space-between;font-size:12px;margin:5px 0}
+.summary-total{font-size:18px;font-weight:900;margin-top:10px}
+.checkout-submit{
+  width:100%;border:0;background:#000;color:#fff;padding:15px;
+  margin-top:17px;cursor:pointer;font-size:11px;font-weight:900;letter-spacing:1px
+}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+  .products{grid-template-columns:repeat(2,1fr)}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-card{min-height:280px}
+}
+@media(max-width:650px){
+  .navbar{padding:14px 16px}
+  nav{gap:9px}
+  nav a{display:none}
+  .logo img{width:90px}
+  .hero{min-height:600px}
+  .hero-inner{padding:70px 18px}
+  .hero h1{font-size:62px}
+  .hero-card{display:none}
+  .section{padding:65px 16px}
+  .section-head{display:block}
+  .section-head p{margin-top:12px}
+  .products{grid-template-columns:1fr;gap:18px}
+  .product-media img{height:auto;max-height:520px}
+  .brand-grid{grid-template-columns:1fr;padding:65px 16px}
+  .brand-grid h2{font-size:45px}
+  .reseller-list{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr;padding:45px 16px}
+  .footer-links{justify-content:flex-start;flex-wrap:wrap}
+  .form-grid{grid-template-columns:1fr}
+  .field.full{grid-column:auto}
+  .checkout-box{padding:23px 17px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="navbar">
+    <a class="logo" href="#" aria-label="MIND FORCE"><img src="foto/logo.png" alt="MIND FORCE"></a>
+
+    <nav>
+      <a href="#koleksi">KOLEKSI</a>
+      <a href="#brand">BRAND</a>
+      <a href="#reseller">RESELLER</a>
+      <a href="#kontak">KONTAK</a>
+      <button class="cart-button" type="button" onclick="toggleCart()">
+        KERANJANG <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="kicker">MIND FORCE / STREETWEAR</div>
+      <h1>WEAR<br>YOUR<br>MIND.</h1>
+      <p>
+        Streetwear dengan karakter. Pilih desain yang mewakili
+        mindset, energi, dan gaya kamu.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#koleksi">LIHAT KOLEKSI</a>
+        <a class="btn secondary" href="#reseller">CUSTOM BRAND</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <img src="foto/logo.png" alt="MIND FORCE"></div>
+  </div>
+</section>
+
+<section class="section" id="koleksi">
+  <div class="section-head">
+    <div>
+      <div class="section-label">01 / COLLECTION</div>
+      <h2>10 DESAIN</h2>
+    </div>
+    <p>
+      Koleksi MIND FORCE dengan ukuran S sampai XXL.
+      Tambahkan produk ke keranjang atau langsung checkout.
+    </p>
+  </div>
+
+  <div class="products">
+
+    <article class="product">
+      <div class="product-media">
+        <span class="badge">01</span>
+        <img src="foto/CHAMPIONS.jpeg" alt="CHAMPIONS">
+      </div>
+      <div class="info">
+        <h3>CHAMPIONS</h3>
+        <p>Desain bold untuk karakter yang percaya diri.</p>
+        <div class="price">Rp99.000</div>
+        <div class="sizes"><span class="size">S</span><span class="size">M</span><span class="size">L</span><span class="size">XL</span><span class="size">XXL</span></div>
+        <button class="buy" onclick="addToCart('CHAMPIONS','foto/CHAMPIONS.jpeg',99000)">+ TAMBAH KE KERANJANG</button>
+        <button class="buy" onclick="openCheckout('CHAMPIONS','foto/CHAMPIONS.jpeg')">BELI SEKARANG →</button>
+      </div>
+    </article>
+
+    <article class="product">
+      <div class="product-media">
+        <span class="badge">02</span>
+        <img src="foto/DONTNEES.jpeg" alt="DONTNEES">
+      </div>
+      <div class="info">
+        <h3>DONTNEES</h3>
+        <p>Typography streetwear dengan karakter tegas.</p>
+        <div class="price">Rp99.000</div>
+        <div class="sizes"><span class="size">S</span><span class="size">M</span><span class="size">L</span><span class="size">XL</span><span class="size">XXL</span></div>
+        <button class="buy" onclick="addToCart('DONTNEES','foto/DONTNEES.jpeg',99000)">+ TAMBAH KE KERANJANG</button>
+        <button class="buy" onclick="openCheckout('DONTNEES','foto/DONTNEES.jpeg')">BELI SEKARANG →</button>
+      </div>
+    </article>
+
+    <article class="product">
+      <div class="product-media">
+        <span class="badge">03</span>
+        <img src="foto/GONDIHITS.jpeg" alt="GONDIHITS">
+      </div>
+      <div class="info">
+        <h3>GONDIHITS</h3>
+        <p>Desain bold dengan nuansa streetwear modern.</p>
+        <div class="price">Rp99.000</div>
+        <div class="sizes"><span class="size">S</span><span class="size">M</span><span class="size">L</span><span class="size">XL</span><span class="size">XXL</span></div>
+        <button class="buy" onclick="addToCart('GONDIHITS','foto/GONDIHITS.jpeg',99000)">+ TAMBAH KE KERANJANG</button>
+        <button class="buy" onclick="openCheckout('GONDIHITS','foto/GONDIHITS.jpeg')">BELI SEKARANG →</button>
+      </div>
+    </article>
+
+    <article class="product">
+      <div class="product-media">
+        <span class="badge">04</span>
+        <img src="foto/IMPROVEMENT.jpeg" alt="IMPROVEMENT">
+      </div>
+      <div class="info">
+        <h3>IMPROVEMENT</h3>
+        <p>Desain untuk semangat berkembang setiap hari.</p>
+        <div class="price">Rp99.000</div>
+        <div class="sizes"><span class="size">S</span><span class="size">M</span><span class="size">L</span><span class="size">XL</span><span class="size">XXL</span></div>
+        <button class="buy" onclick="addToCart('IMPROVEMENT','foto/IMPROVEMENT.jpeg',99000)">+ TAMBAH KE KERANJANG</button>
+        <button class="buy" onclick="openCheckout('IMPROVEMENT','foto/IMPROVEMENT.jpeg')">BELI SEKARANG →</button>
+      </div>
+    </article>
+
+    <article class="product">
+      <div class="product-media">
+        <span class="badge">05</span>
+        <img src="foto/LOWRIDER.jpeg" alt="LOWRIDER">
+      </div>
+      <div class="info">
+        <h3>LOWRIDER</h3>
+        <p>Gaya streetwear santai dengan karakter kuat.</p>
+        <div class="price">Rp99.000</div>
+        <div class="sizes"><span class="size">S</span><span class="size">M</span><span class="size">L</span><span class="size">XL</span><span class="size">XXL</span></div>
+        <button class="buy" onclick="addToCart('LOWRIDER','foto/LOWRIDER.jpeg',99000)">+ TAMBAH KE KERANJANG</button>
+        <button class="buy" onclick="openCheckout('LOWRIDER','foto/LOWRIDER.jpeg')">BELI SEKARANG →</button>
+      </div>
+    </article>
+
+    <article class="product">
+      <div class="product-media">
+        <span class="badge">06</span>
+        <img src="foto/POSITIVE%20ENERGY.jpeg" alt="POSITIVE ENERGY">
+      </div>
+      <div class="info">
+        <h3>POSITIVE ENERGY</h3>
+        <p>Pesan positif untuk energi dan gaya sehari-hari.</p>
+        <div class="price">Rp99.000</div>
+        <div class="sizes"><span class="size">S</span><span class="size">M</span><span class="size">L</span><span class="size">XL</span><span class="size">XXL</span></div>
+        <button class="buy" onclick="addToCart('POSITIVE ENERGY','foto/POSITIVE%20ENERGY.jpeg',99000)">+ TAMBAH KE KERANJANG</button>
+        <button class="buy" onclick="openCheckout('POSITIVE ENERGY','foto/POSITIVE%20ENERGY.jpeg')">BELI SEKARANG →</button>
+      </div>
+    </article>
+
+    <article class="product">
+      <div class="product-media">
+        <span class="badge">07</span>
+        <img src="foto/STAND%20ALONE.jpeg" alt="STAND ALONE">
+      </div>
+      <div class="info">
+        <h3>STAND ALONE</h3>
+        <p>Untuk kamu yang berani berdiri dengan prinsip sendiri.</p>
+        <div class="price">Rp99.000</div>
+        <div class="sizes"><span class="size">S</span><span class="size">M</span><span class="size">L</span><span class="size">XL</span><span class="size">XXL</span></div>
+        <button class="buy" onclick="addToCart('STAND ALONE','foto/STAND%20ALONE.jpeg',99000)">+ TAMBAH KE KERANJANG</button>
+        <button class="buy" onclick="openCheckout('STAND ALONE','foto/STAND%20ALONE.jpeg')">BELI SEKARANG →</button>
+      </div>
+    </article>
+
+    <article class="product">
+      <div class="product-media">
+        <span class="badge">08</span>
+        <img src="foto/STARCOLLECTIONS.jpeg" alt="STARCOLLECTIONS">
+      </div>
+      <div class="info">
+        <h3>STARCOLLECTIONS</h3>
+        <p>Desain star collection dengan karakter eksklusif.</p>
+        <div class="price">Rp99.000</div>
+        <div class="sizes"><span class="size">S</span><span class="size">M</span><span class="size">L</span><span class="size">XL</span><span class="size">XXL</span></div>
+        <button class="buy" onclick="addToCart('STARCOLLECTIONS','foto/STARCOLLECTIONS.jpeg',99000)">+ TAMBAH KE KERANJANG</button>
+        <button class="buy" onclick="openCheckout('STARCOLLECTIONS','foto/STARCOLLECTIONS.jpeg')">BELI SEKARANG →</button>
+      </div>
+    </article>
+
+    <article class="product">
+      <div class="product-media">
+        <span class="badge">09</span>
+        <img src="foto/SUCCESS.jpeg" alt="SUCCESS">
+      </div>
+      <div class="info">
+        <h3>SUCCESS</h3>
+        <p>Desain motivasional untuk perjalanan menuju sukses.</p>
+        <div class="price">Rp99.000</div>
+        <div class="sizes"><span class="size">S</span><span class="size">M</span><span class="size">L</span><span class="size">XL</span><span class="size">XXL</span></div>
+        <button class="buy" onclick="addToCart('SUCCESS','foto/SUCCESS.jpeg',99000)">+ TAMBAH KE KERANJANG</button>
+        <button class="buy" onclick="openCheckout('SUCCESS','foto/SUCCESS.jpeg')">BELI SEKARANG →</button>
+      </div>
+    </article>
+
+    <article class="product">
+      <div class="product-media">
+        <span class="badge">10</span>
+        <img src="foto/UNDERGROUND.jpeg" alt="UNDERGROUND">
+      </div>
+      <div class="info">
+        <h3>UNDERGROUND</h3>
+        <p>Nuansa underground yang gelap, tegas, dan modern.</p>
+        <div class="price">Rp99.000</div>
+        <div class="sizes"><span class="size">S</span><span class="size">M</span><span class="size">L</span><span class="size">XL</span><span class="size">XXL</span></div>
+        <button class="buy" onclick="addToCart('UNDERGROUND','foto/UNDERGROUND.jpeg',99000)">+ TAMBAH KE KERANJANG</button>
+        <button class="buy" onclick="openCheckout('UNDERGROUND','foto/UNDERGROUND.jpeg')">BELI SEKARANG →</button>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="brand-section" id="brand">
+  <div class="brand-grid">
+    <div>
+      <div class="section-label">02 / THE BRAND</div>
+      <h2>WEAR<br>YOUR<br>MIND.</h2>
+      <p>
+        MIND FORCE adalah streetwear untuk orang yang punya karakter,
+        mindset, dan keberanian untuk tampil berbeda.
+      </p>
+    </div>
+    <div class="brand-box">
+      <strong>MIND<br>FORCE</strong>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reseller">
+  <div class="section-label">03 / RESELLER</div>
+  <h2>BUILD YOUR OWN BRAND.</h2>
+  <div style="height:20px"></div>
+
+  <div class="reseller">
+    <h3>RESELLER & CUSTOM BRAND</h3>
+    <p>
+      Punya brand sendiri? Konsultasikan kebutuhan produksi kaos,
+      custom desain, dan branding kamu bersama MIND FORCE.
+    </p>
+
+    <div class="reseller-list">
+      <div>CUSTOM LOGO BRAND</div>
+      <div>CUSTOM DESAIN</div>
+      <div>UKURAN S — XXL</div>
+      <div>PRODUKSI RESELLER</div>
+      <div>KONSULTASI DESAIN</div>
+      <div>ORDER VIA WHATSAPP</div>
+    </div>
+
+    <button class="buy" onclick="openReseller()">MULAI BRAND SAYA →</button>
+  </div>
+</section>
+
+</main>
+
+<footer id="kontak">
+  <div class="footer-inner">
+    <div>
+      <h2>MIND FORCE</h2>
+      <p>WEAR YOUR MIND.</p>
+      <p>Streetwear with character.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#koleksi">KOLEKSI</a>
+      <a href="#reseller">RESELLER</a>
+      <a href="https://wa.me/6285861812560" target="_blank">WHATSAPP</a>
+    </div>
+  </div>
+  <div class="copyright">© 2026 MIND FORCE. ALL RIGHTS RESERVED.</div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h2>KERANJANG</h2>
+    <button class="cart-close" onclick="toggleCart()">×</button>
+  </div>
+
+  <div class="cart-content" id="cartContent">
+    <div class="empty-cart">Keranjang masih kosong.</div>
+  </div>
+
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>TOTAL</span>
+      <span id="cartTotal">Rp0</span>
+    </div>
+
+    <button class="checkout-cart" onclick="checkoutCart()">
+      CHECKOUT VIA WHATSAPP →
+    </button>
+  </div>
+</aside>
+
+<!-- CHECKOUT MODAL -->
+<div class="checkout-modal" id="checkoutModal">
+  <div class="checkout-box">
+
+    <button class="checkout-close" onclick="closeCheckout()">×</button>
+
+    <h3>Checkout Pesanan</h3>
+    <p class="checkout-sub">
+      Isi data pesanan, lalu lanjutkan ke WhatsApp.
+    </p>
+
+    <div class="selected-product">
+      <img id="selectedImage" src="" alt="Produk">
+      <div>
+        <strong id="selectedProduct">Produk</strong>
+        <span>Rp99.000 / pcs</span>
+      </div>
+    </div>
+
+    <form id="checkoutForm">
+
+      <div class="form-grid">
+
+        <div class="field">
+          <label>NAMA LENGKAP</label>
+          <input id="customerName" required placeholder="Nama lengkap">
+        </div>
+
+        <div class="field">
+          <label>NO. WHATSAPP</label>
+          <input id="phone" type="tel" required placeholder="08xxxxxxxxxx">
+        </div>
+
+        <div class="field">
+          <label>UKURAN</label>
+          <select id="size" required>
+            <option value="">Pilih ukuran</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+            <option>XXL</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>JUMLAH</label>
+          <input id="quantity" type="number" min="1" value="1" required>
+        </div>
+
+        <div class="field full">
+          <label>ALAMAT LENGKAP</label>
+          <textarea id="address" required placeholder="Jalan, nomor rumah, desa, kecamatan, kota/kabupaten, provinsi, kode pos"></textarea>
+        </div>
+
+        <div class="field full">
+          <label>CATATAN</label>
+          <textarea id="note" placeholder="Catatan tambahan (opsional)"></textarea>
+        </div>
+
+      </div>
+
+      <div class="checkout-summary">
+        <div class="summary-row">
+          <span>Harga satuan</span>
+          <strong>Rp99.000</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Jumlah</span>
+          <strong id="summaryQty">1</strong>
+        </div>
+
+        <div class="summary-row summary-total">
+          <span>TOTAL</span>
+          <strong id="summaryTotal">Rp99.000</strong>
+        </div>
+      </div>
+
+      <button class="checkout-submit" type="submit">
+        LANJUT CHECKOUT VIA WHATSAPP →
+      </button>
+
+    </form>
+  </div>
+</div>
+
+<!-- RESELLER MODAL -->
+<div class="checkout-modal" id="resellerModal">
+  <div class="checkout-box">
+
+    <button class="checkout-close" onclick="closeReseller()">×</button>
+
+    <h3>Reseller & Custom Brand</h3>
+    <p class="checkout-sub">
+      Isi data singkat untuk konsultasi paket reseller dan custom brand.
+    </p>
+
+    <form id="resellerForm">
+
+      <div class="form-grid">
+
+        <div class="field">
+          <label>NAMA</label>
+          <input id="resellerName" required>
+        </div>
+
+        <div class="field">
+          <label>NO. WHATSAPP</label>
+          <input id="resellerPhone" type="tel" required>
+        </div>
+
+        <div class="field full">
+          <label>NAMA BRAND</label>
+          <input id="brandName" required placeholder="Nama brand kamu">
+        </div>
+
+        <div class="field">
+          <label>JUMLAH PESANAN</label>
+          <input id="resellerQty" type="number" min="1" placeholder="Contoh: 20">
+        </div>
+
+        <div class="field">
+          <label>DESAIN SUDAH ADA?</label>
+          <select id="hasDesign">
+            <option>Sudah ada</option>
+            <option>Belum ada</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label>CATATAN</label>
+          <textarea id="resellerNote" placeholder="Jelaskan kebutuhan brand kamu"></textarea>
+        </div>
+
+      </div>
+
+      <button class="checkout-submit" type="submit">
+        KONSULTASI VIA WHATSAPP →
+      </button>
+
+    </form>
+  </div>
+</div>
+
+<script>
+const PRICE = 99000;
+const WA_NUMBER = "6285861812560";
+
+let cart = [];
+let selectedProduct = "";
+let selectedImage = "";
+
+function formatRupiah(number){
+  return new Intl.NumberFormat("id-ID", {
+    style:"currency",
+    currency:"IDR",
+    maximumFractionDigits:0
+  }).format(number);
+}
+
+/* =========================
+   KERANJANG
+========================= */
+
+function toggleCart(){
+  document.getElementById("cartDrawer").classList.toggle("active");
+  document.getElementById("cartOverlay").classList.toggle("active");
+}
+
+function addToCart(name,image,price){
+  const existing = cart.find(item => item.name === name);
+
+  if(existing){
+    existing.quantity += 1;
+  }else{
+    cart.push({
+      name:name,
+      image:image,
+      price:price,
+      quantity:1
+    });
+  }
+
+  renderCart();
+
+  document.getElementById("cartDrawer").classList.add("active");
+  document.getElementById("cartOverlay").classList.add("active");
+}
+
+function removeFromCart(index){
+  cart.splice(index,1);
+  renderCart();
+}
+
+function renderCart(){
+
+  const content = document.getElementById("cartContent");
+  const count = document.getElementById("cartCount");
+  const totalBox = document.getElementById("cartTotal");
+
+  let total = 0;
+  let quantity = 0;
+
+  if(cart.length === 0){
+    content.innerHTML =
+      '<div class="empty-cart">Keranjang masih kosong.</div>';
+
+    count.textContent = "0";
+    totalBox.textContent = "Rp0";
+    return;
+  }
+
+  let html = "";
+
+  cart.forEach((item,index)=>{
+
+    const subtotal = item.price * item.quantity;
+
+    total += subtotal;
+    quantity += item.quantity;
+
+    html += `
+      <div class="cart-item">
+
+        <img src="${item.image}" alt="${item.name}">
+
+        <div class="cart-info">
+          <h4>${item.name}</h4>
+          <p>${formatRupiah(item.price)}</p>
+          <p>Jumlah: ${item.quantity}</p>
+          <p>Subtotal: ${formatRupiah(subtotal)}</p>
+        </div>
+
+        <button
+          class="cart-remove"
+          onclick="removeFromCart(${index})">
+          HAPUS
+        </button>
+
+      </div>
+    `;
+  });
+
+  content.innerHTML = html;
+  count.textContent = quantity;
+  totalBox.textContent = formatRupiah(total);
+}
+
+function checkoutCart(){
+
+  if(cart.length === 0){
+    alert("Keranjang masih kosong.");
+    return;
+  }
+
+  let message =
+`Halo MIND FORCE, saya ingin melakukan checkout.
+
+*DETAIL PESANAN*
+
+`;
+
+  let total = 0;
+
+  cart.forEach(item=>{
+
+    const subtotal = item.price * item.quantity;
+
+    total += subtotal;
+
+    message +=
+`Produk: ${item.name}
+Jumlah: ${item.quantity}
+Harga: ${formatRupiah(item.price)}
+Subtotal: ${formatRupiah(subtotal)}
+
+`;
+  });
+
+  message +=
+`*TOTAL: ${formatRupiah(total)}*
+
+Mohon konfirmasi pesanan saya.
+Terima kasih.`;
+
+  window.open(
+    "https://wa.me/" + WA_NUMBER +
+    "?text=" + encodeURIComponent(message),
+    "_blank"
+  );
+}
+
+/* =========================
+   CHECKOUT PRODUK
+========================= */
+
+function openCheckout(product,image){
+
+  selectedProduct = product;
+  selectedImage = image;
+
+  document.getElementById("selectedProduct").textContent = product;
+  document.getElementById("selectedImage").src = image;
+
+  document.getElementById("quantity").value = 1;
+  document.getElementById("summaryQty").textContent = 1;
+  document.getElementById("summaryTotal").textContent =
+    formatRupiah(PRICE);
+
+  document.getElementById("checkoutModal").classList.add("active");
+
+  document.body.style.overflow = "hidden";
+}
+
+function closeCheckout(){
+
+  document.getElementById("checkoutModal").classList.remove("active");
+
+  document.body.style.overflow = "";
+}
+
+document.getElementById("quantity").addEventListener("input",function(){
+
+  const quantity =
+    Math.max(1,parseInt(this.value) || 1);
+
+  this.value = quantity;
+
+  document.getElementById("summaryQty").textContent =
+    quantity;
+
+  document.getElementById("summaryTotal").textContent =
+    formatRupiah(PRICE * quantity);
+});
+
+document.getElementById("checkoutForm").addEventListener("submit",function(e){
+
+  e.preventDefault();
+
+  const name =
+    document.getElementById("customerName").value.trim();
+
+  const phone =
+    document.getElementById("phone").value.trim();
+
+  const size =
+    document.getElementById("size").value;
+
+  const quantity =
+    parseInt(document.getElementById("quantity").value);
+
+  const address =
+    document.getElementById("address").value.trim();
+
+  const note =
+    document.getElementById("note").value.trim();
+
+  const total = PRICE * quantity;
+
+  const message =
+`Halo MIND FORCE, saya ingin melakukan checkout.
+
+*DETAIL PESANAN*
+
+Produk: ${selectedProduct}
+Ukuran: ${size}
+Jumlah: ${quantity} pcs
+Harga satuan: ${formatRupiah(PRICE)}
+Total: ${formatRupiah(total)}
+
+*DATA PEMBELI*
+
+Nama: ${name}
+No. WhatsApp: ${phone}
+
+Alamat:
+${address}
+
+Catatan:
+${note || "-"}
+
+Mohon konfirmasi ketersediaan dan proses pesanan saya.
+Terima kasih.`;
+
+  window.open(
+    "https://wa.me/" + WA_NUMBER +
+    "?text=" + encodeURIComponent(message),
+    "_blank"
+  );
+
+});
+
+/* =========================
+   RESELLER
+========================= */
+
+function openReseller(){
+  document.getElementById("resellerModal").classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeReseller(){
+  document.getElementById("resellerModal").classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+document.getElementById("resellerForm").addEventListener("submit",function(e){
+
+  e.preventDefault();
+
+  const name =
+    document.getElementById("resellerName").value.trim();
+
+  const phone =
+    document.getElementById("resellerPhone").value.trim();
+
+  const brand =
+    document.getElementById("brandName").value.trim();
+
+  const qty =
+    document.getElementById("resellerQty").value;
+
+  const design =
+    document.getElementById("hasDesign").value;
+
+  const note =
+    document.getElementById("resellerNote").value.trim();
+
+  const message =
+`Halo MIND FORCE, saya tertarik dengan program Reseller & Custom Brand.
+
+*DATA RESELLER*
+
+Nama: ${name}
+No. WhatsApp: ${phone}
+Nama Brand: ${brand}
+Jumlah Pesanan: ${qty || "-"}
+Desain: ${design}
+
+Catatan:
+${note || "-"}
+
+Saya ingin mendapatkan informasi paket, harga, dan minimal order.`;
+
+  window.open(
+    "https://wa.me/" + WA_NUMBER +
+    "?text=" + encodeURIComponent(message),
+    "_blank"
+  );
+
+});
+
+/* Tutup modal jika klik area luar */
+document.getElementById("checkoutModal").addEventListener("click",function(e){
+  if(e.target === this) closeCheckout();
+});
+
+document.getElementById("resellerModal").addEventListener("click",function(e){
+  if(e.target === this) closeReseller();
+});
+
+renderCart();
+</script>
+
+</body>
+</html>
